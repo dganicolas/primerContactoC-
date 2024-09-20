@@ -12,3 +12,4 @@ C:\Users\nicol\RiderProjects\PrimerContacto\PrimerContacto\obj\Debug\net8.0\refi
 C:\Users\nicol\RiderProjects\PrimerContacto\PrimerContacto\obj\Debug\net8.0\PrimerContacto.pdb
 C:\Users\nicol\RiderProjects\PrimerContacto\PrimerContacto\obj\Debug\net8.0\PrimerContacto.genruntimeconfig.cache
 C:\Users\nicol\RiderProjects\PrimerContacto\PrimerContacto\obj\Debug\net8.0\ref\PrimerContacto.dll
+C:\Users\nicol\RiderProjects\PrimerContacto\PrimerContacto\obj\Debug\net8.0\PrimerContacto.sourcelink.json

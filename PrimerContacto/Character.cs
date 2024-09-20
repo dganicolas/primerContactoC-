@@ -1,8 +1,12 @@
 ﻿using PrimerContacto;
 using PrimerContacto.protection;
 
+///<summary>
+/// esta clase es la que representa al jugador
+///</summary>
 public class Character
 {
+    
     string name;
     public int armor;
     public int armorBase;
@@ -11,7 +15,14 @@ public class Character
     public int baseDamage;
     public int damage;
     private List<Item> items;
-
+    
+    ///<summary>
+    /// este es el constructor principal, donde se inicizializaran la clase
+    /// <param name="name"> es el nombre</param>
+    /// <param name="armorBase">es la armadura base</param>
+    /// <param name="maxHitpoints">es la vida maxima </param>
+    /// <param name="baseDamage">es el daño base</param>
+    ///</summary>
     public Character(string name, int armorBase, int maxHitpoints, int baseDamage)
     {
         this.name = name;
@@ -26,6 +37,7 @@ public class Character
     public int attack()
     {
         damage = baseDamage;
+        //compruebo si el jugador en el inventario tiene algun objeto arma
         foreach (var item in items)
         {
             if (item is Weapon)
@@ -40,6 +52,7 @@ public class Character
     public int defence()
     {
         armor = armorBase;
+        //compruebo si el jugador en el inventario tiene algun objeto defensa
         foreach (var item in items)
         {
             if (item is Protection)
@@ -62,15 +75,5 @@ public class Character
         items.Remove(item);
     }
     
-    public void heal(int cured)
-    {
-        if (cured + healthPoints >= maxHitPoints)
-        {
-            healthPoints = maxHitPoints;
-        }
-        else
-        {
-            healthPoints += cured;
-        }
-    }
+   
 }
