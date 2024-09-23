@@ -12,7 +12,7 @@ public class Shield : Protection
     /// <param name="armor">defensa del objeto</param>
     public Shield(string name, int armor):base(name,armor)
     {
-        this.name = Name;
+        this.name = name;
         this.armor = armor;
     }
 }
