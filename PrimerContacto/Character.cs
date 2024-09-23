@@ -77,6 +77,7 @@ public class Character
         {
             items.Remove(armaduraEscogida);
             armaduraEquipada = armaduraEscogida;
+            armaduraEscogida.apply(this);
             return armaduraEscogida;
         }
         else
@@ -84,6 +85,7 @@ public class Character
             items.Add(armaduraEquipada);
             items.Remove(armaduraEscogida);
             armaduraEquipada = armaduraEscogida;
+            armaduraEscogida.apply(this);
             return armaduraEscogida;
         }
         
@@ -118,6 +120,7 @@ public class Character
         {
             items.Remove(armaEscogida);
             armaEquipada = armaEscogida;
+            armaEquipada.apply(this);
             return armaEscogida;
         }
         else
@@ -125,6 +128,7 @@ public class Character
             items.Add(armaEquipada);
             items.Remove(armaEscogida);
             armaEquipada = armaEscogida;
+            armaEquipada.apply(this);
             return armaEscogida;
         }
         
