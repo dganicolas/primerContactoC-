@@ -8,9 +8,9 @@ public class Shield : Protection
     /// <summary>
     /// esta es el constructor primario de la clase escudo 
     /// </summary>
-    /// <param name="Name">nombre del objeto</param>
+    /// <param name="name">nombre del objeto</param>
     /// <param name="armor">defensa del objeto</param>
-    public Shield(string Name, int armor)
+    public Shield(string name, int armor):base(name,armor)
     {
         this.name = Name;
         this.armor = armor;

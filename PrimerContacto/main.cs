@@ -12,6 +12,9 @@ class Program
         Console.WriteLine(nicolas.attack());
         nicolas.addItem(hacha);
         Console.WriteLine(nicolas.attack());
+        Console.WriteLine(nicolas.armaEquipada);
+        nicolas.equipWeapon();
+        Console.WriteLine(nicolas.armaEquipada);
         nicolas.removeItem(hacha);
         Console.WriteLine(nicolas.attack());
         Console.WriteLine(nicolas.defence());
