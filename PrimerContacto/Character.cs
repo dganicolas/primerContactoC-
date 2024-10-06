@@ -1,7 +1,7 @@
 ﻿using PrimerContacto;
 using PrimerContacto.protection;
 using PrimerContacto.weapons;
-
+using PrimerContacto.Mascotas;
 ///<summary>
 /// esta clase es la que representa al jugador
 ///</summary>
@@ -17,7 +17,7 @@ public class Character
     private List<Item> items;
     public Weapon? armaEquipada;
     public Protection? armaduraEquipada;
-
+    public Mascotas minions;
     ///<summary>
     /// este es el constructor principal, donde se inicizializaran la clase
     /// <param name="name"> es el nombre</param>
@@ -25,7 +25,7 @@ public class Character
     /// <param name="maxHitpoints">es la vida maxima </param>
     /// <param name="baseDamage">es el daño base</param>
     ///</summary>
-    public Character(string name, int armorBase, int maxHitpoints, int baseDamage)
+    Character(string name, int armorBase, int maxHitpoints, int baseDamage)
     {
         this.name = name;
         this.armorBase = armorBase;
@@ -37,6 +37,7 @@ public class Character
         items = new List<Item>();
     }
 
+    delegate int pepe();
     public int attack()
     {
         return damage;
@@ -131,7 +132,6 @@ public class Character
             armaEquipada.apply(this);
             return armaEscogida;
         }
-        
     }
     public void addItem(Item item)
     {
