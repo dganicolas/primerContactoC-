@@ -13,6 +13,9 @@ public abstract class Protection: Item
 
     public void apply(Character character)
     {
-        character.armor = character.armorBase+armor;
+        character.moreDefenseDelegate += () =>
+        {
+            return character.armorBase + 5;
+        };
     }
 }

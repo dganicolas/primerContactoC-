@@ -1,6 +1,6 @@
 ﻿namespace PrimerContacto.Mascotas;
 
-public abstract class Mascotas
+public abstract class Pets
 {
     public String Nombre { get; set; }
     public int Ataque { get; set; }

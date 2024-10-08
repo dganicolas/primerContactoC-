@@ -8,16 +8,21 @@ using PrimerContacto.Mascotas;
 public class Character
 {
     string name;
-    public int armor;
     public int armorBase;
-    int maxHitPoints;
-    int healthPoints;
+    private int maxHitPoints;
+    public int healthPoints;
     public int baseDamage;
     public int damage;
     private List<Item> items;
     public Weapon? armaEquipada;
     public Protection? armaduraEquipada;
-    public Mascotas minions;
+    delegate Pets pets();
+    private pets petsDelegate;
+    public delegate int moreDamage();//puede almacenar codigo, tipo codigo que un casco me cure vida o que una espada me sume mas daño
+    public moreDamage moreDamageDelegate;
+    public delegate int moreDefense();
+    public moreDefense moreDefenseDelegate;
+    
     ///<summary>
     /// este es el constructor principal, donde se inicizializaran la clase
     /// <param name="name"> es el nombre</param>
@@ -25,7 +30,7 @@ public class Character
     /// <param name="maxHitpoints">es la vida maxima </param>
     /// <param name="baseDamage">es el daño base</param>
     ///</summary>
-    Character(string name, int armorBase, int maxHitpoints, int baseDamage)
+    public Character(string name, int armorBase, int maxHitpoints, int baseDamage)
     {
         this.name = name;
         this.armorBase = armorBase;
@@ -33,19 +38,18 @@ public class Character
         this.healthPoints = maxHitpoints;
         this.baseDamage = baseDamage;
         damage = baseDamage;
-        armor = armorBase;
         items = new List<Item>();
     }
 
-    delegate int pepe();
+    
     public int attack()
     {
-        return damage;
+        return damage + moreDamageDelegate();
     }
-
+    
     public int defence()
     {
-        return armor;
+        return armorBase + moreDefenseDelegate();
     }
 
     public Protection equipProctection()
@@ -97,24 +101,7 @@ public class Character
      int numero = int.Parse(Console.ReadLine())-1;
      return cambiarArmas(weaponList[numero]);;
     }
-
-    private Dictionary<int,Weapon> crearDiccionarioArmas()
-    {
-        Dictionary<int, Weapon> weaponList = new Dictionary<int, Weapon>();
-        int indexado = 0;
-        int contador = 1;
-        foreach (var item in items)
-        {
-            if (item is Weapon weapon)
-            {
-                Console.WriteLine("(" + contador + ") " + "arma: " + weapon.name + " daño: " + weapon.damage);
-                weaponList.Add(indexado, weapon);
-            }
-            indexado++;
-        }
-
-        return weaponList;
-    }
+    
     private Weapon cambiarArmas(Weapon armaEscogida)
     {
         if (armaEquipada == null)
@@ -133,6 +120,25 @@ public class Character
             return armaEscogida;
         }
     }
+
+    private Dictionary<int,Weapon> crearDiccionarioArmas()
+    {
+        Dictionary<int, Weapon> weaponList = new Dictionary<int, Weapon>();
+        int indexado = 0;
+        int contador = 1;
+        foreach (var item in items)
+        {
+            if (item is Weapon weapon)
+            {
+                Console.WriteLine("(" + contador + ") " + "arma: " + weapon.name + " daño: " + weapon.damage);
+                weaponList.Add(indexado, weapon);
+            }
+            indexado++;
+        }
+
+        return weaponList;
+    }
+    
     public void addItem(Item item)
     {
         items.Add(item);
