@@ -12,7 +12,10 @@ public abstract class Weapon : Item
     }
     public void apply(Character character)
     {
-        character.damage = character.baseDamage+damage;
-        
+        character.moreDamageDelegate = () =>
+        {
+            return damage;
+        };
+
     }
 }

@@ -2,7 +2,7 @@
 
 public class Sword : Weapon
 {
-    string Name;
+    string name;
     int damage;
     /// <summary>
     /// this is the primary constructor of the sword class 
@@ -11,7 +11,7 @@ public class Sword : Weapon
     /// <param name="damage">object damage</param>
     public Sword(string name, int damage):base(name,damage)
     {
-        this.Name = name;
+        this.name = name;
         this.damage = damage;
     }
     

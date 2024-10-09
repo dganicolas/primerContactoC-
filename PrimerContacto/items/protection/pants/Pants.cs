@@ -1,6 +1,6 @@
 ﻿namespace PrimerContacto.protection;
 
-public class Helmet : Protection
+public abstract class Pants:Protection
 {
     public string name;
     public int armor;
@@ -10,7 +10,7 @@ public class Helmet : Protection
     /// </summary>
     /// <param name="name">nombre del objeto</param>
     /// <param name="armor">defensa del objeto</param>
-    public Helmet(string name, int armor):base(name,armor)
+    public Pants(string name, int armor):base(name,armor)
     {
         this.name = name;
         this.armor = armor;

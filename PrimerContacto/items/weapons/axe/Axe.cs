@@ -2,7 +2,7 @@
 
 public class Axe : Weapon
 {
-    public string name { get; set; }
+    public string name;
     public int damage;
     
     /// <summary>

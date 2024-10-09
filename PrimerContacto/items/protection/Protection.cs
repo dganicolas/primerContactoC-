@@ -15,7 +15,7 @@ public abstract class Protection: Item
     {
         character.moreDefenseDelegate += () =>
         {
-            return character.armorBase + 5;
+            return 5;
         };
     }
 }
